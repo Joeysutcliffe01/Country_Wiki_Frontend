@@ -1,0 +1,109 @@
+.country__info-box {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 30vh;
+    left: 10vw;
+    width: 80vw;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.34);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    border: 1px solid rgba(255, 255, 255, 0.48);
+    /* border: 2px solid red; */
+}
+
+.country__info-box-close {
+    position: absolute;
+    top: -3.5rem;
+    right: .5rem;
+    padding: .2rem .7rem .4rem .7rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    color: rgb(225, 78, 210);
+    background-color: rgba(255, 255, 255, 0.653);
+    transition: all .1s ease-in-out;
+    border: 2px solid rgba(230, 230, 230, 0.608);
+}
+
+.country__info-box-close:hover {
+    transform: scale(1.1);
+    background-color: rgb(249, 249, 249);
+}
+
+.country__info-box-coat-of-arms {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 5rem;
+    z-index: -10;
+}
+
+.country__info-box-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    text-align: center;
+    /* border: 2px solid rgb(0, 21, 255); */
+}
+
+.country__info-box-img {}
+
+.country__info-box-country {
+    text-align: center;
+}
+
+.country__info-box-right {
+    padding-top: 0;
+    padding-left: 2rem;
+    width: 80%;
+    /* border: 2px solid rgb(21, 255, 0); */
+}
+
+.country__info-box-right-flag-info {
+    margin-top: -.2rem;
+}
+
+.box-right-details {
+    font-weight: 600;
+}
+
+.box-right-details span {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 900px) {
+    .country__info-box {
+        top: 20vh;
+        align-items: center;
+        flex-direction: column;
+        left: 7vw;
+    }
+
+    .country__info-box-right-flag-info {
+        /* margin-top: -.2rem; */
+        text-align: center;
+    }
+
+    .country__info-box-coat-of-arms {
+        position: relative;
+        margin: 0 auto;
+        padding: 2rem;
+
+    }
+
+    .country__info-box-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* border: 2px solid rgb(21, 255, 0); */
+    }
+}

@@ -1,0 +1,16 @@
+nav {
+    display: flex;
+    justify-content: center;
+    padding: .8rem 0 2rem 0;
+    font-weight: 600;
+    font-size: 2em;
+    color: rgb(32, 32, 32);
+}
+
+.NavBar__logo-h1 {
+    font-size: 2rem;
+}
+
+nav span {
+    color: rgb(225, 78, 210);
+}

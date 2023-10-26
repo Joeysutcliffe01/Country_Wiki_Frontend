@@ -1,0 +1,27 @@
+path {
+    position: relative;
+    cursor: pointer;
+}
+
+path:hover {
+    width: 10rem;
+    fill: rgb(225, 78, 210);
+}
+
+.content__name {
+    position: absolute;
+    top: .7rem;
+    left: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(225, 78, 210);
+}
+
+@media only screen and (max-width: 900px) {
+    .content__name {
+        top: 6rem;
+        width: 96%;
+        margin: 0 auto;
+        text-align: center;
+    }
+}

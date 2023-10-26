@@ -1,0 +1,5 @@
+@import "components/Nav/nav.css";
+@import "components/Hero/hero.css";
+@import "components/CountryInfoBox/country_info_box.css";
+@import "components/Searchbar/searchbar.css";
+@import "components/Map_SVG/map_svg.css";

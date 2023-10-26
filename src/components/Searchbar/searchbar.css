@@ -1,0 +1,66 @@
+.searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+    width: 99%;
+}
+
+.searchbar__form {
+    position: relative;
+}
+
+.searchbar__input-issue-message {
+    position: absolute;
+    top: -2.5rem;
+    left: .5rem;
+    color: red;
+    font-weight: 500;
+}
+
+.searchbar__input {
+
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 50vw;
+    border: 2px solid rgba(205, 205, 205, 0.47);
+    font-size: 2rem;
+    background-color: rgba(255, 255, 255, 0.67);
+}
+
+.searchbar__input_hide {
+    position: absolute;
+    top: -3.3rem;
+    left: 50vw;
+    padding: .2rem .5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    color: rgb(225, 78, 210);
+    background-color: rgba(255, 255, 255, 0.653);
+}
+
+.searchbar__input_hide:hover {
+    transform: scale(1.2);
+    background-color: rgb(249, 249, 249);
+}
+
+.hide__searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 50%;
+    top: 1.9rem;
+    right: 3rem;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid rgb(240, 240, 240);
+    cursor: pointer;
+}
+
+.hide__searchbar:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
