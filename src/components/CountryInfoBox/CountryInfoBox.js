@@ -38,7 +38,7 @@ const CountryInfoBox = ({ dataFromApi, setDataFromApi }) => {
             <p className="country__info-box-right-flag-info">{flags.alt}</p>
 
             <p className="country__info-box-right-language box-right-details">
-              language:
+              Language:
               <span> {languages[Object.keys(languages)[0]]}</span>{" "}
               <span>{languages[Object.keys(languages)[1]]}</span>
             </p>
