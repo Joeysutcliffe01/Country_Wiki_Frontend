@@ -26,10 +26,14 @@ const Hero = () => {
       {isLoading ? (
         <LoadingAnimation />
       ) : (
-        <CountryInfoBox
-          dataFromApi={dataFromApi}
-          setDataFromApi={setDataFromApi}
-        />
+        <>
+          {!showSearchBar && (
+            <CountryInfoBox
+              dataFromApi={dataFromApi}
+              setDataFromApi={setDataFromApi}
+            />
+          )}
+        </>
       )}
     </section>
   );
