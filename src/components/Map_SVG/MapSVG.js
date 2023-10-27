@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const MapSVG = ({ setDataFromApi }) => {
+export const MapSVG = ({ setDataFromApi, setIsLoading }) => {
   //ç The svg file does not provide names for every country, we need to target the id and the class names to get the all country names
   const [targetId, setTargetId] = useState("");
   const [targetClassName, setTargetClassName] = useState("");
@@ -20,6 +20,7 @@ export const MapSVG = ({ setDataFromApi }) => {
 
   const sendUserInput = async () => {
     if (!country) return;
+    setIsLoading(true);
 
     const response = await fetch(
       "https://country-wiki-backend.onrender.com/country",
@@ -32,6 +33,7 @@ export const MapSVG = ({ setDataFromApi }) => {
 
     if (response.ok) {
       response.json().then((apiData) => setDataFromApi(apiData));
+      setIsLoading(false);
     } else {
       console.log("Issue with fetch");
     }

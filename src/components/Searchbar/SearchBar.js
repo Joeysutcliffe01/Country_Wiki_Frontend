@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SearchBar = ({ dataFromApi, setDataFromApi }) => {
+const SearchBar = ({ dataFromApi, setDataFromApi, setIsLoading }) => {
   const [userInput, setUserInput] = useState("");
   const [showSearchBar, setShowSearchBar] = useState(false);
 
@@ -10,6 +10,7 @@ const SearchBar = ({ dataFromApi, setDataFromApi }) => {
 
   const sendUserInput = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     const response = await fetch(
       "https://country-wiki-backend.onrender.com/country",
@@ -22,6 +23,7 @@ const SearchBar = ({ dataFromApi, setDataFromApi }) => {
 
     if (response.ok) {
       response.json().then((apiData) => setDataFromApi(apiData));
+      setIsLoading(false);
     } else {
       console.log("Issue with sendUserInput");
     }
