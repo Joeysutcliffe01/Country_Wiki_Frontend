@@ -2,28 +2,29 @@ import { useState } from "react";
 import SearchBar from "../Searchbar/SearchBar";
 import { MapSVG } from "../Map_SVG/MapSVG";
 import CountryInfoBox from "../CountryInfoBox/CountryInfoBox";
-
-import Lottie from "lottie-react";
-import animationData from "../../assets/Lottie_animations/animation_lo8iw1rg.json";
+import LoadingAnimation from "../Animations/LoadingAnimation";
 
 const Hero = () => {
   const [dataFromApi, setDataFromApi] = useState(null);
+  const [showSearchBar, setShowSearchBar] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-  console.log("isLoading", isLoading);
 
   return (
     <section className="hero__div">
-      <MapSVG setDataFromApi={setDataFromApi} setIsLoading={setIsLoading} />
+      <MapSVG
+        setDataFromApi={setDataFromApi}
+        setIsLoading={setIsLoading}
+        setShowSearchBar={setShowSearchBar}
+      />
       <SearchBar
         dataFromApi={dataFromApi}
         setDataFromApi={setDataFromApi}
         setIsLoading={setIsLoading}
+        showSearchBar={showSearchBar}
+        setShowSearchBar={setShowSearchBar}
       />
       {isLoading ? (
-        <div className="hero__loading-animation-container">
-          <Lottie animationData={animationData} />
-        </div>
+        <LoadingAnimation />
       ) : (
         <CountryInfoBox
           dataFromApi={dataFromApi}

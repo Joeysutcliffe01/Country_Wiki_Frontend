@@ -1,8 +1,13 @@
 import { useState } from "react";
 
-const SearchBar = ({ dataFromApi, setDataFromApi, setIsLoading }) => {
+const SearchBar = ({
+  dataFromApi,
+  setDataFromApi,
+  setIsLoading,
+  setShowSearchBar,
+  showSearchBar,
+}) => {
   const [userInput, setUserInput] = useState("");
-  const [showSearchBar, setShowSearchBar] = useState(false);
 
   const handleOpenSearchBar = () => {
     setShowSearchBar((prev) => !prev);
@@ -11,25 +16,27 @@ const SearchBar = ({ dataFromApi, setDataFromApi, setIsLoading }) => {
   const sendUserInput = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setShowSearchBar(false);
 
-    const response = await fetch(
-      "https://country-wiki-backend.onrender.com/country",
-      {
-        method: "POST",
-        body: JSON.stringify({ userInput }),
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    const response = await fetch("http://localhost:3500/country", {
+      method: "POST",
+      body: JSON.stringify({ userInput }),
+      headers: { "Content-Type": "application/json" },
+    });
 
-    if (response.ok) {
-      response.json().then((apiData) => setDataFromApi(apiData));
+    const data = await response.json();
+    setDataFromApi(data);
+
+    if (response.ok && !data.status) {
       setIsLoading(false);
+      setShowSearchBar(false);
     } else {
-      console.log("Issue with sendUserInput");
+      setIsLoading(false);
+      setShowSearchBar(true);
+      console.error("Issue with sendUserInput");
     }
   };
 
-  console.log("dataFromApi SearchBar------", dataFromApi);
   return (
     <section className={showSearchBar ? "searchbar" : "hide__searchbar"}>
       {showSearchBar ? (

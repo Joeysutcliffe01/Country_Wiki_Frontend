@@ -24,7 +24,7 @@ const CountryInfoBox = ({ dataFromApi, setDataFromApi }) => {
           <img
             className="country__info-box-coat-of-arms"
             src={coatOfArms.png}
-            alt=""
+            alt={name.official + "Coat of Arms"}
           />
           <div className="country__info-box-left">
             <img
@@ -36,6 +36,10 @@ const CountryInfoBox = ({ dataFromApi, setDataFromApi }) => {
           </div>
           <div className="country__info-box-right">
             <p className="country__info-box-right-flag-info">{flags.alt}</p>
+
+            <p className="country__info-box-right-language box-right-details">
+              Country: <span>{name.common}</span>
+            </p>
 
             <p className="country__info-box-right-language box-right-details">
               Language:
