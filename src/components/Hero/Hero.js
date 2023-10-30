@@ -10,7 +10,7 @@ const Hero = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <section className="hero__div">
+    <section data-test="hero-container" className="hero__div">
       <MapSVG
         setDataFromApi={setDataFromApi}
         setIsLoading={setIsLoading}

@@ -64,3 +64,15 @@
     cursor: pointer;
     transform: scale(1.1);
 }
+
+@media only screen and (max-width: 1160px) {
+    .searchbar__input {
+        font-size: 1.3em;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .searchbar__input {
+        font-size: 1em;
+    }
+}

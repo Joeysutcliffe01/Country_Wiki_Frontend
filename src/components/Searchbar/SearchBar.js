@@ -19,7 +19,7 @@ const SearchBar = ({
     setShowSearchBar(false);
 
     const response = await fetch(
-      "https://country-wiki-backend.onrender.com/country",
+      "https://lively-tick-sock.cyclic.app/country",
       {
         method: "POST",
         body: JSON.stringify({ userInput }),
@@ -44,16 +44,28 @@ const SearchBar = ({
     <section className={showSearchBar ? "searchbar" : "hide__searchbar"}>
       {showSearchBar ? (
         <>
-          <form onSubmit={sendUserInput} className="searchbar__form">
-            <h1 className="searchbar__input_hide" onClick={handleOpenSearchBar}>
+          <form
+            data-test="searchbar__form"
+            onSubmit={sendUserInput}
+            className="searchbar__form"
+          >
+            <h1
+              data-test="searchbar__form"
+              className="searchbar__input_hide"
+              onClick={handleOpenSearchBar}
+            >
               X
             </h1>
-            <p className="searchbar__input-issue-message">
+            <p
+              data-test="input-issue-message"
+              className="searchbar__input-issue-message"
+            >
               {dataFromApi?.status === 404
                 ? "Looks like we cant find this country, please check spelling"
                 : ""}
             </p>
             <input
+              data-test="searchbar-input"
               className="searchbar__input"
               type="text"
               value={userInput}
@@ -64,6 +76,7 @@ const SearchBar = ({
         </>
       ) : (
         <h1
+          data-test="searchbar-input-open-icon"
           className="searchbar__input_open-icon"
           onClick={handleOpenSearchBar}
         >

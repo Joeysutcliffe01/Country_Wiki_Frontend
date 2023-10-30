@@ -24,7 +24,7 @@ export const MapSVG = ({ setDataFromApi, setIsLoading, setShowSearchBar }) => {
     setShowSearchBar(false);
 
     const response = await fetch(
-      "https://country-wiki-backend.onrender.com/country",
+      "https://lively-tick-sock.cyclic.app/country",
       {
         method: "POST",
         body: JSON.stringify({ country }),
@@ -2120,8 +2120,12 @@ export const MapSVG = ({ setDataFromApi, setIsLoading, setShowSearchBar }) => {
 
   return (
     <>
-      <div className="content__map">{content.map}</div>
-      <h1 className="content__name">{content.name}</h1>
+      <div data-test="svg-map" className="content__map">
+        {content.map}
+      </div>
+      <h1 data-test="country-name" className="content__name">
+        {content.name}
+      </h1>
     </>
   );
 };

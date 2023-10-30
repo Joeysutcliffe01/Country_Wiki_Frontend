@@ -1,0 +1,31 @@
+.server__message-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(213, 0, 0);
+    position: absolute;
+    bottom: -.2rem;
+    width: 100%;
+}
+
+.server__startup-message {
+    padding: 0 0 0 1rem;
+    color: rgb(255, 255, 255);
+}
+
+.server__startup-message-hide {
+    color: white;
+    margin: 0 1rem 0 0;
+    padding: .3rem .7rem .3rem .7rem;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 50%;
+    text-align: center;
+    transition: .2s ease-in-out;
+}
+
+.server__startup-message-hide:hover {
+    font-size: large;
+    background-color: white;
+    color: red;
+}
