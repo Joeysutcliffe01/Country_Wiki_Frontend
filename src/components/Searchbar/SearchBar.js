@@ -19,7 +19,7 @@ const SearchBar = ({
     setShowSearchBar(false);
 
     const response = await fetch(
-      "https://lively-tick-sock.cyclic.app/country",
+      "https://country-wiki-backend.onrender.com/country",
       {
         method: "POST",
         body: JSON.stringify({ userInput }),

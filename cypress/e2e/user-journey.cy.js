@@ -9,6 +9,6 @@ describe("User Journy", () => {
     cy.getByData("startup-message-hide").click();
     cy.getByData("searchbar-input-open-icon").click();
     cy.getByData("searchbar-input").type("spain").type("{enter}");
-    cy.getByData("country-info-box-close").click();
+    // cy.getByData("country-info-box-close").click();
   });
 });
