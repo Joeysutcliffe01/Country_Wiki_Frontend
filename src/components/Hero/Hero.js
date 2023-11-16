@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SearchBar from "../Searchbar/SearchBar";
 import { MapSVG } from "../Map_SVG/MapSVG";
 import CountryInfoBox from "../CountryInfoBox/CountryInfoBox";
@@ -8,6 +8,8 @@ const Hero = () => {
   const [dataFromApi, setDataFromApi] = useState(null);
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+
 
   return (
     <section data-test="hero-container" className="hero__div">

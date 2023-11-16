@@ -1,31 +1,33 @@
 import { useEffect, useState } from "react";
 
 const ServerMessage = () => {
-  const [serverStartUpMessage, setServerStartUpMessage] = useState(null);
+  const [serverStartUpMessage, setServerStartUpMessage] = useState(
+    window.localStorage.getItem("server_message")
+  );
+
+  // Ç Turn on to check the serverStartUpMessage
+  // window.localStorage.clear();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setServerStartUpMessage(true);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
+    window.localStorage.setItem("server_message", serverStartUpMessage);
+  }, [serverStartUpMessage]);
 
-  const handleServerStartUpMessage = () => {
-    setServerStartUpMessage((prev) => !prev);
+  const handleServerMessage = () => {
+    setServerStartUpMessage(false);
   };
-  console.log("serverStartUpMessage----------", serverStartUpMessage);
+
   return (
     <>
-      {serverStartUpMessage && (
+      {JSON.parse(serverStartUpMessage) !== false && (
         <div className="server__message-container">
           <p data-test="startup-message" className="server__startup-message">
-            The server spins down after 15 mins of inactivaty 😅, loading may be
+            The server spins down after 15 mins of inactivity 😅, loading may be
             slow.
           </p>
           <p
             data-test="startup-message-hide"
             className="server__startup-message-hide"
-            onClick={handleServerStartUpMessage}
+            onClick={handleServerMessage}
           >
             X
           </p>

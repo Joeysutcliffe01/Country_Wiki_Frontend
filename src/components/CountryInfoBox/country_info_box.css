@@ -87,18 +87,7 @@
         align-items: center;
         flex-direction: column;
         left: 7vw;
-    }
-
-    .country__info-box-right-flag-info {
-        /* margin-top: -.2rem; */
-        text-align: center;
-    }
-
-    .country__info-box-coat-of-arms {
-        position: relative;
-        margin: 0 auto;
-        padding: 2rem;
-
+        /* border: 2px solid red; */
     }
 
     .country__info-box-right {
@@ -107,5 +96,78 @@
         align-items: center;
         flex-direction: column;
         /* border: 2px solid rgb(21, 255, 0); */
+    }
+
+    .country__info-box-right-flag-info {
+        /* margin-top: -.2rem; */
+        text-align: center;
+        /* border: 2px solid rgb(255, 225, 0); */
+    }
+
+    .country__info-box-right-list-container {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        /* border: 2px solid rgb(255, 225, 0); */
+    }
+
+    .box-right-details {
+        width: max-content;
+        /* border: 2px solid rgb(255, 102, 0); */
+    }
+
+    .country__info-box-coat-of-arms {
+        /* position: relative; */
+        margin: 0 auto;
+        padding: 1rem;
+        width: 3rem;
+        top: 0;
+
+        /* border: 2px solid rgb(30, 0, 255); */
+    }
+
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .country__info-box {
+        top: 7vh;
+        height: 83vh;
+        /* border: 2px solid rgb(255, 187, 0); */
+    }
+
+    .country__info-box-right {
+        padding: 1rem;
+        width: 100%;
+        /* border: 2px solid rgb(21, 255, 0); */
+    }
+
+    .country__info-box-right-flag-info {
+        /* margin-top: -.2rem; */
+        text-align: center;
+        /* border: 2px solid rgb(255, 225, 0); */
+    }
+
+    .country__info-box-right-list-container {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        /* border: 2px solid rgb(255, 225, 0); */
+    }
+
+    .box-right-details {
+        width: max-content;
+        /* border: 2px solid rgb(255, 102, 0); */
+    }
+
+    .country__info-box-name {
+        /* border: 2px solid rgb(255, 102, 0); */
+        width: max-content;
+
+    }
+
+    .country__info-box-coat-of-arms {
+        display: none;
     }
 }

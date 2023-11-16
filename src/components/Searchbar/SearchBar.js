@@ -18,14 +18,11 @@ const SearchBar = ({
     setIsLoading(true);
     setShowSearchBar(false);
 
-    const response = await fetch(
-      "https://lively-tick-sock.cyclic.app/country",
-      {
-        method: "POST",
-        body: JSON.stringify({ userInput }),
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    const response = await fetch("http://localhost:3500/country", {
+      method: "POST",
+      body: JSON.stringify({ userInput }),
+      headers: { "Content-Type": "application/json" },
+    });
 
     const data = await response.json();
     setDataFromApi(data);

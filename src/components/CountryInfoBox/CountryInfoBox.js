@@ -53,53 +53,55 @@ const CountryInfoBox = ({ dataFromApi, setDataFromApi }) => {
               {flags.alt}
             </p>
 
-            <p
-              data-test="country-info-box-right-flag-info-common-name"
-              className="country__info-box-right-language box-right-details"
-            >
-              Country: <span>{name.common}</span>
-            </p>
+            <div className="country__info-box-right-list-container">
+              <p
+                data-test="country-info-box-right-flag-info-common-name"
+                className="country__info-box-right-language box-right-details"
+              >
+                Country: <span>{name.common}</span>
+              </p>
 
-            <p
-              data-test="country-info-box-right-flag-info-common-language"
-              className="country__info-box-right-language box-right-details"
-            >
-              Language:
-              <span data-test="country-info-box-right-flag-info-common-language-first">
-                {" "}
-                {languages[Object.keys(languages)[0]]}
-              </span>{" "}
-              <span data-test="country-info-box-right-flag-info-common-language-second">
-                {languages[Object.keys(languages)[1]]}
-              </span>
-            </p>
+              <p
+                data-test="country-info-box-right-flag-info-common-language"
+                className="country__info-box-right-language box-right-details"
+              >
+                Language:
+                <span data-test="country-info-box-right-flag-info-common-language-first">
+                  {" "}
+                  {languages[Object.keys(languages)[0]]}
+                </span>{" "}
+                <span data-test="country-info-box-right-flag-info-common-language-second">
+                  {languages[Object.keys(languages)[1]]}
+                </span>
+              </p>
 
-            <p
-              data-test="country-info-box-right-flag-info-population"
-              className="country__info-box-right-language box-right-details"
-            >
-              Population: <span>{population}</span>
-            </p>
+              <p
+                data-test="country-info-box-right-flag-info-population"
+                className="country__info-box-right-language box-right-details"
+              >
+                Population: <span>{population}</span>
+              </p>
 
-            <p
-              data-test="country-info-box-right-flag-info-capital"
-              className="country__info-box-right-language box-right-details"
-            >
-              Capital: <span>{capital}</span>
-            </p>
+              <p
+                data-test="country-info-box-right-flag-info-capital"
+                className="country__info-box-right-language box-right-details"
+              >
+                Capital: <span>{capital}</span>
+              </p>
 
-            <p
-              data-test="country-info-box-right-flag-info-currencies"
-              className="country__info-box-right-language box-right-details"
-            >
-              Currencies:{" "}
-              <span data-test="country-info-box-right-flag-info-currencies-symbol">
-                {currencies[Object.keys(currencies)[0]].symbol}
-              </span>{" "}
-              <span data-test="country-info-box-right-flag-info-currencies-name">
-                {currencies[Object.keys(currencies)[0]].name}
-              </span>
-            </p>
+              <p
+                data-test="country-info-box-right-flag-info-currencies"
+                className="country__info-box-right-language box-right-details"
+              >
+                Currencies:{" "}
+                <span data-test="country-info-box-right-flag-info-currencies-symbol">
+                  {currencies[Object.keys(currencies)[0]].symbol}
+                </span>{" "}
+                <span data-test="country-info-box-right-flag-info-currencies-name">
+                  {currencies[Object.keys(currencies)[0]].name}
+                </span>
+              </p>
+            </div>
           </div>
         </section>
       )}
