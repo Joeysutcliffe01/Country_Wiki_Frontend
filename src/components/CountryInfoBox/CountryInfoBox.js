@@ -1,6 +1,8 @@
 const CountryInfoBox = ({ dataFromApi, setDataFromApi }) => {
   if (dataFromApi?.status === 404) return;
 
+  console.log("dataFromApi inside of box", dataFromApi);
+
   const {
     name,
     flags,

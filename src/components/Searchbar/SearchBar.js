@@ -19,13 +19,15 @@ const SearchBar = ({
     setShowSearchBar(false);
 
     const response = await fetch(
-      "https://lively-tick-sock.cyclic.app/country",
+      "https://country-wiki-backend.onrender.com/country",
       {
         method: "POST",
         body: JSON.stringify({ userInput }),
         headers: { "Content-Type": "application/json" },
       }
     );
+
+    console.log("response inside of search");
 
     const data = await response.json();
     setDataFromApi(data);
@@ -36,7 +38,7 @@ const SearchBar = ({
     } else {
       setIsLoading(false);
       setShowSearchBar(true);
-      console.error("Issue with sendUserInput");
+      console.error("Issue with sendUserInput", response);
     }
   };
 
